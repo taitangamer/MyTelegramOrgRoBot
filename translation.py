@@ -1,20 +1,18 @@
 class Translation(object):
-    START_TEXT = """Hi!
-please read the TnC before proceeding: https://t.me/SpEcHlDe/889
-Thank you for using me 😬
-Enter your Telegram Phone Number, to get the APP-ID from my.telegram.org
+    START_TEXT = """Hola🤞!
+I am Telegram Api-id and Api-Hash Scrapper. 
+IF you Dont believe The dev of this bot dont use this bot and use [my.telegram.org](my.telegram.org) 
+Now Send Your phone Number to get api details. 
+If Bot stops when the way of halfly getting api details please ensureto type /start. 
+Thanks For using meh. 
 
-/start at any stage to re-enter your details"""
-    AFTER_RECVD_CODE_TEXT = """I see!
-now please send the Telegram code that you received from Telegram!
+"""
+    AFTER_RECVD_CODE_TEXT = """okay,
+    Now Send Me The Code That you received From Telegram. 
 
-this code is only used for the purpose of getting the APP ID from my.telegram.org
-if you do not trust this bot dev, please host this bot yourself
-by opening https://github.com/SpEcHiDe/MyTelegramOrgRoBot and clicking on the Pink Button
-
-/start at any stage to re-enter your details"""
-    BEFORE_SUCC_LOGIN = "recieved code. Scarpping web page ..."
-    ERRED_PAGE = "something wrongings. failed to get app id. \n\n@SpEcHlDe"
-    CANCELLED_MESG = "Bye! Please re /start the bot conversation"
+"""
+    BEFORE_SUCC_LOGIN = "™️ Recieved Code Successfully . Scarpping From web page ..."
+    ERRED_PAGE = "something went wrong. failed to get app id. \n\n@TeleRoid14"
+    CANCELLED_MESG = "ok Then! Please /start the bot to restart"
     IN_VALID_CODE_PVDED = "sorry, but the input does not seem to be a valid Telegram Web-Login code"
     IN_VALID_PHNO_PVDED = "sorry, but the input does not seem to be a valid phone number"
