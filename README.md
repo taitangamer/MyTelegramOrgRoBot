@@ -29,7 +29,7 @@ __For any other bots, ask the respective bot developers, for the source code, be
 
 - clone the repository, locally.
 ```sh
-git clone https://GitHub.com/SpEcHiDe/MyTelegramOrgRoBot.git
+git clone https://GitHub.com/PredatorHackerzZ/MyTelegramOrgRoBot.git
 ```
 
 - change the directory.
