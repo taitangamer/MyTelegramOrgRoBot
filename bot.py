@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# Copyright (c) Shrimadhav U K
+# (c) Shrimadhav U K | PredatorHackerzZ
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -20,8 +20,6 @@
 import logging
 import os
 
-from base64 import b64decode
-
 from telegram import ParseMode
 from telegram.ext import (
     Updater,
@@ -29,6 +27,11 @@ from telegram.ext import (
     MessageHandler,
     Filters,
     ConversationHandler
+)
+from telegram import (
+    Bot,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup
 )
 
 from helper_funcs.step_one import request_tg_code_get_random_hash
@@ -38,8 +41,7 @@ from helper_funcs.step_four import create_new_tg_app
 from helper_funcs.helper_steps import (
     get_phno_imn_ges,
     extract_code_imn_ges,
-    parse_to_meaning_ful_text,
-    compareFiles
+    parse_to_meaning_ful_text
 )
 
 WEBHOOK = bool(os.environ.get("WEBHOOK", False))
@@ -66,7 +68,22 @@ def start(update, context):
     """ ConversationHandler entry_point /start """
     update.message.reply_text(
         Config.START_TEXT,
-        parse_mode=ParseMode.HTML
+        parse_mode=ParseMode.HTML,
+        # (c) @TheTeleRoid
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('⚠️ Disclaimer', url='https://t.me/TeleRoidGroup/313'),
+                    InlineKeyboardButton('Source 😋', url='https://github.com/PredatorHackerzZ/MyTelegramOrgRoBot')
+              ],[
+                    InlineKeyboardButton('🤖BotsList', url='https://t.me/joinchat/t1ko_FOJxhFiOThl'),
+                    InlineKeyboardButton('👥Support', url='https://telegram.dog/TeleRoid14'),
+                    InlineKeyboardButton('⭕ Channel', url='https://t.me/TeleRoidGroup')
+              ],[
+                    InlineKeyboardButton('» Subscribe Now YouTube «', url='https://youtu.be/hl6yGmUtm3w')
+               ]
+            ]
+        )
     )
     return INPUT_PHONE_NUMBER
 
@@ -154,10 +171,7 @@ def input_tg_code(update, context):
         if status_t:
             # parse the scrapped page into an user readable
             # message
-            me_t = parse_to_meaning_ful_text(
-                current_user_creds.get("input_phone_number"),
-                response_dv
-            )
+            me_t = parse_to_meaning_ful_text(response_dv)
             me_t += "\n"
             me_t += "\n"
             # add channel ads at the bottom, because why not?
@@ -165,7 +179,21 @@ def input_tg_code(update, context):
             # and send to the user
             aes_mesg_i.edit_text(
                 text=me_t,
-                parse_mode=ParseMode.HTML
+                parse_mode=ParseMode.HTML,
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                [
+                    InlineKeyboardButton('⚠️ Disclaimer', url='https://t.me/TeleRoidGroup/313'),
+                    InlineKeyboardButton('Source 😋', url='https://github.com/PredatorHackerzZ/MyTelegramOrgRoBot')
+              ],[
+                    InlineKeyboardButton('🤖BotsList', url='https://t.me/joinchat/t1ko_FOJxhFiOThl'),
+                    InlineKeyboardButton('👥Support', url='https://telegram.dog/TeleRoid14'),
+                    InlineKeyboardButton('⭕ Channel', url='https://t.me/TeleRoidGroup')
+              ],[
+                    InlineKeyboardButton('» Subscribe Now YouTube «', url='https://youtu.be/hl6yGmUtm3w')
+               ]
+            ]
+                )
             )
         else:
             LOGGER.warning("creating APP ID caused error %s", response_dv)
@@ -190,34 +218,12 @@ def error(update, context):
     LOGGER.warning("Update %s caused error %s", update, context.error)
 
 
-def go_heck_verification(update, context):
-    """ just for putting dust inside
-    https://t.me/c/1481357570/588029 in
-    their eyes 🤪🤣🤣 """
-    s_m_ = update.message.reply_text(Config.VFCN_CHECKING_ONE)
-    oic = b64decode(
-        Config.ORIGINAL_CODE
-    ).decode("UTF-8")
-    pokk = f"{update.message.from_user.id}.py"
-    os.system(
-        f"wget {oic} -O {pokk}"
-    )
-    ret_val = compareFiles(
-        open("bot.py", "rb"),
-        open(pokk, "rb")
-    )
-    s_m_.edit_text(
-        Config.VFCN_RETURN_STATUS.format(
-            ret_status=ret_val
-        )
-    )
-    os.remove(pokk)
-
-
 def main():
     """ Initial Entry Point """
     # Create the Updater and pass it your bot's token.
-    updater = Updater(Config.TG_BOT_TOKEN)
+    # Make sure to set use_context=True to use the new context based callbacks
+    # Post version 12 this will no longer be necessary
+    updater = Updater(Config.TG_BOT_TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
     tg_bot_dis_patcher = updater.dispatcher
@@ -239,13 +245,6 @@ def main():
     )
 
     tg_bot_dis_patcher.add_handler(conv_handler)
-
-    # for maintaining trust
-    # https://t.me/c/1481357570/588029
-    tg_bot_dis_patcher.add_handler(CommandHandler(
-        "verify",
-        go_heck_verification
-    ))
 
     # log all errors
     tg_bot_dis_patcher.add_error_handler(error)
