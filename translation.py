@@ -1,18 +1,8 @@
 class Translation(object):
-    START_TEXT = """Hola🤞!
-I am Telegram Api-id and Api-Hash Scrapper. 
-IF you Dont believe The dev of this bot dont use this bot and use [my.telegram.org](my.telegram.org) 
-Now Send Your phone Number to get api details. 
-If Bot stops when the way of halfly getting api details please ensureto type /start. 
-Thanks For using meh. 
-
-"""
-    AFTER_RECVD_CODE_TEXT = """okay,
-    Now Send Me The Code That you received From Telegram. 
-
-"""
-    BEFORE_SUCC_LOGIN = "™️ Recieved Code Successfully . Scarpping From web page ..."
-    ERRED_PAGE = "something went wrong. failed to get app id. \n\n@TeleRoid14"
-    CANCELLED_MESG = "ok Then! Please /start the bot to restart"
-    IN_VALID_CODE_PVDED = "sorry, but the input does not seem to be a valid Telegram Web-Login code"
-    IN_VALID_PHNO_PVDED = "sorry, but the input does not seem to be a valid phone number"
+    START_TEXT = """<b>Hi!</b>\nThis Is An <b>APP ID & HASH GENERATOR BOT.</b>\n\nI Can Help You Get Your <b>Telegram APP ID & HASH,</b> Just Make Sure You Read Terms & Conditions Of Running This Bot In The <b>Disclaimer</b> Page Firstly.\n\n<b>Enter Your Telegram Number (Including Country Code For Example +16374826473) To Get The APP-ID From my.telegram.org</b>\n\nPress /start At Any Stage To <b>Re-Enter Your Details If You Perhaps Made Some Mistake.</b>"""
+    AFTER_RECVD_CODE_TEXT = """A Verification Code sent to you by Telegram. Enter that Verification Code Or Forward That Verification Message."""
+    BEFORE_SUCC_LOGIN = "Recieved Code. Scarpping Web Page ..."
+    ERRED_PAGE = "Something Went Wrong. Failed To Get App ID. \n\nContact @TeleRoid14 Chat."
+    CANCELLED_MESG = "🖕🖕! Please Reply /start the bot conversation"
+    IN_VALID_CODE_PVDED = "Sorry, But The Input Does Not Seem To Be A Valid Telegram Web-Login Code"
+    IN_VALID_PHNO_PVDED = "Sorry, But The Input Does Not Seem To Be A Valid Phone Number"
