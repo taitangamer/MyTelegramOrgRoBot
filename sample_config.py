@@ -2,7 +2,8 @@ import os
 from translation import Translation
 
 
-class Config:
+
+class Config(object):
     # get a token from @BotFather
     TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", None)
     # required for running on Heroku
@@ -12,9 +13,9 @@ class Config:
     CHUNK_SIZE = 10280
     # MyTelegram.org
     # configurtion required while creating new application
-    APP_TITLE = os.environ.get("APP_TITLE", "usetgbot")
-    APP_SHORT_NAME = os.environ.get("APP_SHORT_NAME", "usetgbot")
-    APP_URL = os.environ.get("APP_URL", "https://telegram.dog/UseTGxBot")
+    APP_TITLE = os.environ.get("APP_TITLE", "TGDXBot")
+    APP_SHORT_NAME = os.environ.get("APP_SHORT_NAME", "TGDXBot")
+    APP_URL = os.environ.get("APP_URL", "https://telegram.dog/TGDXBot")
     # these platform informations were obtained
     # on 27.01.2020 21:15:50 IST
     APP_PLATFORM = [
@@ -29,13 +30,10 @@ class Config:
     ]
     # if any of the platform, does not work
     # please reopen
-    # https://github.com/SpEcHiDe/MyTelegramOrgRoBot/issues/3
-    APP_DESCRIPTION = os.environ.get(
-        "APP_DESCRIPTION",
-        "created using https://telegram.dog/UseTGxBot"
-    )
+    # https://github.com/LushaiTech/MyTelegramORG/issues/3
+    APP_DESCRIPTION = os.environ.get("APP_DESCRIPTION", "created using https://telegram.dog/TGDXBot")
     #
-    FOOTER_TEXT = os.environ.get("FTEXT", "❤️ @SpEcHlDe")
+    FOOTER_TEXT = os.environ.get("FTEXT", "Made With ❤ By @TeleRoidGroup")
     # the strings used in the different messages
     # in the bot
     START_TEXT = os.environ.get("START_TEXT", Translation.START_TEXT)
@@ -48,10 +46,7 @@ class Config:
         Translation.BEFORE_SUCC_LOGIN
     )
     ERRED_PAGE = os.environ.get("ERRED_PAGE", Translation.ERRED_PAGE)
-    CANCELLED_MESG = os.environ.get(
-        "CANCELLED_MESG",
-        Translation.CANCELLED_MESG
-    )
+    CANCELLED_MESG = os.environ.get("CANCELLED_MESG", Translation.CANCELLED_MESG)
     IN_VALID_CODE_PVDED = os.environ.get(
         "IN_VALID_CODE_PVDED",
         Translation.IN_VALID_CODE_PVDED
@@ -60,10 +55,6 @@ class Config:
         "IN_VALID_PHNO_PVDED",
         Translation.IN_VALID_PHNO_PVDED
     )
-    # the below strings are not meant to be configurable :\(
-    VFCN_CHECKING_ONE = "\"It is a beautiful and terrible thing, and should therefore be treated with great caution.\""
-    ORIGINAL_CODE = "aHR0cHM6Ly9naXRodWIuY29tL1NwRWNIaURlL015VGVsZWdyYW1PcmdSb0JvdC9yYXcvbWFzdGVyL2JvdC5weQ=="
-    VFCN_RETURN_STATUS = "'compareFiles' returned '{ret_status}'."
 
 
 class Development(Config):
