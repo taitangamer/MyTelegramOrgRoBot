@@ -73,14 +73,14 @@ def start(update, context):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('⚠️ Disclaimer', url='https://t.me/TeleRoidGroup/313'),
-                    InlineKeyboardButton('Source 😋', url='https://github.com/PredatorHackerzZ/MyTelegramOrgRoBot')
+                    InlineKeyboardButton('♛ 𝐎𝐖𝐍𝐄𝐑 ♛', url='https://t.me/taitangamerz'),
+                    InlineKeyboardButton('🌸 𝐌𝐀𝐈𝐍𝐓𝐀𝐈𝐍𝐄𝐑 💥', url='https://t.me/taitangamer')
               ],[
-                    InlineKeyboardButton('🤖BotsList', url='https://t.me/joinchat/t1ko_FOJxhFiOThl'),
-                    InlineKeyboardButton('👥Support', url='https://telegram.dog/TeleRoid14'),
-                    InlineKeyboardButton('⭕ Channel', url='https://t.me/TeleRoidGroup')
+     
+                    InlineKeyboardButton('🥀 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 💥', url='https://t.me/timepassgroup01'),
+                    InlineKeyboardButton('🥀 𝐆𝐑𝐎𝐔𝐏 💥', url='https://t.me/timepassgroup01')
               ],[
-                    InlineKeyboardButton('» Subscribe Now YouTube «', url='https://youtu.be/hl6yGmUtm3w')
+
                ]
             ]
         )
@@ -183,14 +183,15 @@ def input_tg_code(update, context):
                 reply_markup=InlineKeyboardMarkup(
                     [
                 [
-                    InlineKeyboardButton('⚠️ Disclaimer', url='https://t.me/TeleRoidGroup/313'),
-                    InlineKeyboardButton('Source 😋', url='https://github.com/PredatorHackerzZ/MyTelegramOrgRoBot')
+                    InlineKeyboardButton('♛ 𝐎𝐖𝐍𝐄𝐑 ♛', url='https://t.me/taitangamerz'),
+                    InlineKeyboardButton('🌸 𝐌𝐀𝐈𝐍𝐓𝐀𝐈𝐍𝐄𝐑 💥', url='https://t.me/taitangamer')
               ],[
-                    InlineKeyboardButton('🤖BotsList', url='https://t.me/joinchat/t1ko_FOJxhFiOThl'),
-                    InlineKeyboardButton('👥Support', url='https://telegram.dog/TeleRoid14'),
-                    InlineKeyboardButton('⭕ Channel', url='https://t.me/TeleRoidGroup')
+     
+                    InlineKeyboardButton('🥀 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 💥', url='https://t.me/timepassgroup01'),
+                    InlineKeyboardButton('🥀 𝐆𝐑𝐎𝐔𝐏 💥', url='https://t.me/timepassgroup01')
               ],[
-                    InlineKeyboardButton('» Subscribe Now YouTube «', url='https://youtu.be/hl6yGmUtm3w')
+
+
                ]
             ]
                 )
