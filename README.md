@@ -1,5 +1,7 @@
 # MyTelegramOrgRoBot
 
+https://heroku.com/deploy?template=https://github.com/taitangamer/MyTelegramOrgRoBot
+
 ~~(yet)~~ another my.telegram.org scrapper inside Telegram.
 
 ### ⚠ legal DISclaimER 🚸
